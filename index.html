@@ -386,11 +386,9 @@ openBtn.addEventListener('click',(event)=>{
     musicToggle.style.display='grid';
     musicToggle.style.placeItems='center';
   }
-  // Land on the main invitation card, rather than showing the full page from its top.
-  window.setTimeout(()=>{
-    const card = document.getElementById('invitation');
-    if (card) card.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 120);
+  // After opening, show the FIRST invitation page (Shree Ganeshaya Namah + Ganesha).
+  // Do not auto-scroll to a later section; the invitation content naturally starts at the top.
+  window.scrollTo({top: 0, behavior: 'auto'});
 });
 const target=new Date('2026-11-26T17:00:00+05:30').getTime();
 function updateCountdown(){
